@@ -1,0 +1,10 @@
+22:00:38 **** Incremental Build of configuration Debug for project 004LEDnPIN ****
+make -j8 all 
+arm-none-eabi-size  004LEDnPIN.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	      0	   1568	   2348	    92c	004LEDnPIN.elf
+Finished building: default.size.stdout
+ 
+
+22:00:38 Build Finished. 0 errors, 0 warnings. (took 160ms)
+

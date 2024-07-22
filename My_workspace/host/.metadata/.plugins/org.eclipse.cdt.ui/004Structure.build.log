@@ -1,0 +1,6 @@
+19:35:08 **** Clean-only build of configuration Debug for project 004Structure ****
+rm -rf main.o main.d 004Structure.exe 
+rm: cannot remove `004Structure.exe': Permission denied
+
+19:35:08 Build Finished. 0 errors, 0 warnings. (took 137ms)
+

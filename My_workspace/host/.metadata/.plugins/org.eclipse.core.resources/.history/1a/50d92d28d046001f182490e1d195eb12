@@ -1,0 +1,25 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 20, 2024
+ *      Author: rolni
+ */
+#include <stdio.h>
+
+int main ()
+{
+  /*int a=getchar();
+
+  int b=getchar();
+
+  int c=getchar();*/
+	float a,b,c;
+	scanf("%f,%f,%f", &a,&b,&c);
+
+
+  float average=(a+b+c)/3.0;
+  printf("Average is ");
+  printf("%f", average);
+}
+
+

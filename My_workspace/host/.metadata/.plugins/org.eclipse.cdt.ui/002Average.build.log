@@ -1,0 +1,6 @@
+21:22:02 **** Clean-only build of configuration Debug for project 002Average ****
+rm -rf main.o main.d 002Average.exe 
+rm: cannot remove `002Average.exe': Permission denied
+
+21:22:03 Build Finished. 0 errors, 0 warnings. (took 120ms)
+

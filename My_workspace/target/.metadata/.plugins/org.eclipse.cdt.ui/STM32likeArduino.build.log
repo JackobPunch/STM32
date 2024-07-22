@@ -1,0 +1,17 @@
+22:13:35 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "STM32likeArduino.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\STM32likeArduino\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32likeArduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32likeArduino.elf
+ 
+arm-none-eabi-size  STM32likeArduino.elf 
+arm-none-eabi-objdump -h -S STM32likeArduino.elf  > "STM32likeArduino.list"
+   text	   data	    bss	    dec	    hex	filename
+    792	      0	   1568	   2360	    938	STM32likeArduino.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32likeArduino.list
+ 
+
+22:13:35 Build Finished. 0 errors, 0 warnings. (took 512ms)
+

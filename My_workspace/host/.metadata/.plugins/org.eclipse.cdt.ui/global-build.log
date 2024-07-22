@@ -1,4 +1,3 @@
-15:55:40 **** Incremental Build of configuration Debug for project 000TestProject ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -o 000TestProject.exe main.o math.o 
+19:35:08 **** Clean-only build of configuration Debug for project 004Structure ****
+rm -rf main.o main.d 004Structure.exe 
+rm: cannot remove `004Structure.exe': Permission denied

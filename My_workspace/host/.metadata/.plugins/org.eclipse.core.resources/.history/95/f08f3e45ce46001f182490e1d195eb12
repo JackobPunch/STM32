@@ -1,0 +1,23 @@
+/*
+ * main.c
+ *
+ *  Created on: Jul 20, 2024
+ *      Author: rolni
+ */
+#include <stdio.h>
+
+int main ()
+{
+  int a=getchar();
+
+  int b=getchar();
+
+  int c=getchar();
+
+  double average=(a+b+c)/((double)3);
+  printf("Average is ");
+  printf("%f", average);
+	for(;;);
+}
+should it works?
+

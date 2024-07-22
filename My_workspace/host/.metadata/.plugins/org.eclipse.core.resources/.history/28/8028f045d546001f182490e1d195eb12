@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main ()
+{
+	char a=100;
+	printf("Address of a is %s", &a);
+	char* p_a=&a;
+	printf("%c",*p_a);
+	*p_a=65;
+	printf("%c",a);
+}
+
