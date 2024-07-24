@@ -1,140 +1,122 @@
-21:47:07 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+17:41:24 **** Build of configuration Debug for project 006Keypad ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f207zgtx.d" -MT"Startup/startup_stm32f207zgtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f207zgtx.o" "../Startup/startup_stm32f207zgtx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "006Keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\006Keypad\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="006Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 006Keypad.elf
+ 
+arm-none-eabi-size  006Keypad.elf 
+arm-none-eabi-objdump -h -S 006Keypad.elf  > "006Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+   4072	     92	   1900	   6064	   17b0	006Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: 006Keypad.list
+ 
+17:41:48 **** Incremental Build of configuration Debug for project 006Keypad ****
+make -j8 all 
+arm-none-eabi-size  006Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4072	     92	   1900	   6064	   17b0	006Keypad.elf
+Finished building: default.size.stdout
+ 
+17:52:30 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "STM32likeArduino.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\STM32likeArduino\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32likeArduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM32likeArduino.elf
+arm-none-eabi-gcc -o "006Keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\006Keypad\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="006Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 006Keypad.elf
  
-arm-none-eabi-size  STM32likeArduino.elf 
-arm-none-eabi-objdump -h -S STM32likeArduino.elf  > "STM32likeArduino.list"
+arm-none-eabi-size  006Keypad.elf 
+arm-none-eabi-objdump -h -S 006Keypad.elf  > "006Keypad.list"
    text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
+   4072	     92	   1900	   6064	   17b0	006Keypad.elf
 Finished building: default.size.stdout
  
-Finished building: STM32likeArduino.list
+Finished building: 006Keypad.list
  
-21:47:36 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+17:55:33 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
-arm-none-eabi-size  STM32likeArduino.elf 
+arm-none-eabi-size  006Keypad.elf 
    text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
+   4072	     92	   1900	   6064	   17b0	006Keypad.elf
 Finished building: default.size.stdout
  
-21:48:17 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+17:56:05 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
-arm-none-eabi-size  STM32likeArduino.elf 
+arm-none-eabi-size  006Keypad.elf 
    text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
+   4072	     92	   1900	   6064	   17b0	006Keypad.elf
 Finished building: default.size.stdout
  
-21:51:13 **** Incremental Build of configuration Debug for project STM32likeArduino ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "STM32likeArduino.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\STM32likeArduino\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32likeArduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM32likeArduino.elf
- 
-arm-none-eabi-size  STM32likeArduino.elf 
-arm-none-eabi-objdump -h -S STM32likeArduino.elf  > "STM32likeArduino.list"
-   text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
-Finished building: default.size.stdout
- 
-Finished building: STM32likeArduino.list
- 
-21:54:06 **** Incremental Build of configuration Debug for project 004LEDnPIN ****
+18:05:45 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "004LEDnPIN.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\004LEDnPIN\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="004LEDnPIN.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 004LEDnPIN.elf
+arm-none-eabi-gcc -o "006Keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\006Keypad\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="006Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 006Keypad.elf
  
-arm-none-eabi-size  004LEDnPIN.elf 
-arm-none-eabi-objdump -h -S 004LEDnPIN.elf  > "004LEDnPIN.list"
+arm-none-eabi-size  006Keypad.elf 
+arm-none-eabi-objdump -h -S 006Keypad.elf  > "006Keypad.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      0	   1568	   2348	    92c	004LEDnPIN.elf
+   4104	     92	   1900	   6096	   17d0	006Keypad.elf
 Finished building: default.size.stdout
  
-Finished building: 004LEDnPIN.list
+Finished building: 006Keypad.list
  
-21:54:25 **** Incremental Build of configuration Debug for project STM32likeArduino ****
-make -j8 all 
-arm-none-eabi-size  STM32likeArduino.elf 
-   text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
-Finished building: default.size.stdout
- 
-21:54:56 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+18:07:17 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "STM32likeArduino.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\STM32likeArduino\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32likeArduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM32likeArduino.elf
+arm-none-eabi-gcc -o "006Keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\006Keypad\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="006Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 006Keypad.elf
  
-arm-none-eabi-size  STM32likeArduino.elf 
-arm-none-eabi-objdump -h -S STM32likeArduino.elf  > "STM32likeArduino.list"
+arm-none-eabi-size  006Keypad.elf 
+arm-none-eabi-objdump -h -S 006Keypad.elf  > "006Keypad.list"
    text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
+   4140	     92	   1900	   6132	   17f4	006Keypad.elf
 Finished building: default.size.stdout
  
-Finished building: STM32likeArduino.list
+Finished building: 006Keypad.list
  
-21:55:26 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+18:08:28 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
-arm-none-eabi-size  STM32likeArduino.elf 
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -o "006Keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\006Keypad\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="006Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 006Keypad.elf
+ 
+arm-none-eabi-size  006Keypad.elf 
+arm-none-eabi-objdump -h -S 006Keypad.elf  > "006Keypad.list"
    text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
+   4216	     92	   1900	   6208	   1840	006Keypad.elf
 Finished building: default.size.stdout
  
-21:57:44 **** Incremental Build of configuration Debug for project STM32likeArduino ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "STM32likeArduino.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\STM32likeArduino\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32likeArduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM32likeArduino.elf
+Finished building: 006Keypad.list
  
-arm-none-eabi-size  STM32likeArduino.elf 
-arm-none-eabi-objdump -h -S STM32likeArduino.elf  > "STM32likeArduino.list"
-   text	   data	    bss	    dec	    hex	filename
-    800	      0	   1568	   2368	    940	STM32likeArduino.elf
-Finished building: default.size.stdout
- 
-Finished building: STM32likeArduino.list
- 
-22:00:02 **** Incremental Build of configuration Debug for project 004LEDnPIN ****
-make -j8 all 
-arm-none-eabi-size  004LEDnPIN.elf 
-   text	   data	    bss	    dec	    hex	filename
-    780	      0	   1568	   2348	    92c	004LEDnPIN.elf
-Finished building: default.size.stdout
- 
-22:00:38 **** Incremental Build of configuration Debug for project 004LEDnPIN ****
-make -j8 all 
-arm-none-eabi-size  004LEDnPIN.elf 
-   text	   data	    bss	    dec	    hex	filename
-    780	      0	   1568	   2348	    92c	004LEDnPIN.elf
-Finished building: default.size.stdout
- 
-22:02:31 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+18:10:56 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "STM32likeArduino.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\STM32likeArduino\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32likeArduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM32likeArduino.elf
+arm-none-eabi-gcc -o "006Keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\006Keypad\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="006Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 006Keypad.elf
  
-arm-none-eabi-size  STM32likeArduino.elf 
-arm-none-eabi-objdump -h -S STM32likeArduino.elf  > "STM32likeArduino.list"
+arm-none-eabi-size  006Keypad.elf 
+arm-none-eabi-objdump -h -S 006Keypad.elf  > "006Keypad.list"
    text	   data	    bss	    dec	    hex	filename
-    800	      0	   1568	   2368	    940	STM32likeArduino.elf
+   4216	     92	   1900	   6208	   1840	006Keypad.elf
 Finished building: default.size.stdout
  
-Finished building: STM32likeArduino.list
+Finished building: 006Keypad.list
  
-22:13:35 **** Incremental Build of configuration Debug for project STM32likeArduino ****
+18:11:48 **** Incremental Build of configuration Debug for project 006Keypad ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F2 -DNUCLEO_F207ZG -DSTM32F207ZGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "STM32likeArduino.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\STM32likeArduino\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32likeArduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM32likeArduino.elf
+arm-none-eabi-gcc -o "006Keypad.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\rolni\kody\STM32\My_workspace\target\006Keypad\STM32F207ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="006Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 006Keypad.elf
  
-arm-none-eabi-size  STM32likeArduino.elf 
-arm-none-eabi-objdump -h -S STM32likeArduino.elf  > "STM32likeArduino.list"
+arm-none-eabi-size  006Keypad.elf 
+arm-none-eabi-objdump -h -S 006Keypad.elf  > "006Keypad.list"
    text	   data	    bss	    dec	    hex	filename
-    792	      0	   1568	   2360	    938	STM32likeArduino.elf
+   4216	     92	   1900	   6208	   1840	006Keypad.elf
 Finished building: default.size.stdout
  
-Finished building: STM32likeArduino.list
+Finished building: 006Keypad.list
  
