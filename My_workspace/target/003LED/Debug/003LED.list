@@ -124,7 +124,7 @@ int main(void)
  80001f8:	601a      	str	r2, [r3, #0]
 
     // Set PB7 high
-    //*pPortBOutReg |= 0x00000080; // Set PB7 high
+    //*pPortBOutReg |= 0x00000080; // Set pin 7 high
     *pPortBOutReg |= (1<<7);
  80001fa:	687b      	ldr	r3, [r7, #4]
  80001fc:	681b      	ldr	r3, [r3, #0]
