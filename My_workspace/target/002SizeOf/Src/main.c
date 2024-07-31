@@ -24,6 +24,6 @@
 
 int main(void)
 {
-	printf("Size of char is %u\n", sizeof(char));
+	printf("Size of int is %u\n", sizeof(int));
 	for(;;);
 }

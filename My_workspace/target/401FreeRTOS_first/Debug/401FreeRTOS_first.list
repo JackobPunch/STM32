@@ -21,9 +21,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   8 .data         00000070  20000000  08004c68  00006000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00012f5c  20000070  08004cd8  00006070  2**2
+  9 .bss          0004b35c  20000070  08004cd8  00006070  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20012fcc  08004cd8  00006fcc  2**0
+ 10 ._user_heap_stack 00000604  2004b3cc  08004cd8  000063cc  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00006070  2**0
                   CONTENTS, READONLY
@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00012530  00000000  00000000  0003cf1b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000d6a0a  00000000  00000000  0004f44b  2**0
+ 18 .debug_str    000d6a0b  00000000  00000000  0004f44b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00125e55  2**0
+ 19 .comment      00000043  00000000  00000000  00125e56  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000046f4  00000000  00000000  00125e98  2**2
+ 20 .debug_frame  000046f4  00000000  00000000  00125e9c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006e  00000000  00000000  0012a58c  2**0
+ 21 .debug_line_str 0000006e  00000000  00000000  0012a590  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1632,7 +1632,7 @@ LoopFillZerobss:
   ldr r2, =_sbss
  8000bbc:	20000070 	.word	0x20000070
   ldr r4, =_ebss
- 8000bc0:	20012fcc 	.word	0x20012fcc
+ 8000bc0:	2004b3cc 	.word	0x2004b3cc
 
 08000bc4 <ADC_IRQHandler>:
  * @retval None       
@@ -11103,11 +11103,11 @@ void * pvPortMalloc( size_t xWantedSize )
  800400a:	46bd      	mov	sp, r7
  800400c:	bd80      	pop	{r7, pc}
  800400e:	bf00      	nop
- 8004010:	20012e68 	.word	0x20012e68
- 8004014:	20012e6c 	.word	0x20012e6c
- 8004018:	20012e60 	.word	0x20012e60
- 800401c:	20012e70 	.word	0x20012e70
- 8004020:	20012e74 	.word	0x20012e74
+ 8004010:	2004b268 	.word	0x2004b268
+ 8004014:	2004b26c 	.word	0x2004b26c
+ 8004018:	2004b260 	.word	0x2004b260
+ 800401c:	2004b270 	.word	0x2004b270
+ 8004020:	2004b274 	.word	0x2004b274
 
 08004024 <vPortFree>:
 /*-----------------------------------------------------------*/
@@ -11237,8 +11237,8 @@ void vPortFree( void * pv )
  80040d2:	46bd      	mov	sp, r7
  80040d4:	bd80      	pop	{r7, pc}
  80040d6:	bf00      	nop
- 80040d8:	20012e6c 	.word	0x20012e6c
- 80040dc:	20012e78 	.word	0x20012e78
+ 80040d8:	2004b26c 	.word	0x2004b26c
+ 80040dc:	2004b278 	.word	0x2004b278
 
 080040e0 <prvHeapInit>:
     return pv;
@@ -11254,7 +11254,7 @@ static void prvHeapInit( void ) /* PRIVILEGED_FUNCTION */
     uint8_t * pucAlignedHeap;
     portPOINTER_SIZE_TYPE uxAddress;
     size_t xTotalHeapSize = configTOTAL_HEAP_SIZE;
- 80040e6:	f44f 3396 	mov.w	r3, #76800	@ 0x12c00
+ 80040e6:	f44f 2396 	mov.w	r3, #307200	@ 0x4b000
  80040ea:	60bb      	str	r3, [r7, #8]
 
     /* Ensure the heap starts on a correctly aligned boundary. */
@@ -11366,10 +11366,10 @@ static void prvHeapInit( void ) /* PRIVILEGED_FUNCTION */
  800417e:	f85d 7b04 	ldr.w	r7, [sp], #4
  8004182:	4770      	bx	lr
  8004184:	20000260 	.word	0x20000260
- 8004188:	20012e60 	.word	0x20012e60
- 800418c:	20012e68 	.word	0x20012e68
- 8004190:	20012e70 	.word	0x20012e70
- 8004194:	20012e6c 	.word	0x20012e6c
+ 8004188:	2004b260 	.word	0x2004b260
+ 800418c:	2004b268 	.word	0x2004b268
+ 8004190:	2004b270 	.word	0x2004b270
+ 8004194:	2004b26c 	.word	0x2004b26c
 
 08004198 <prvInsertBlockIntoFreeList>:
 /*-----------------------------------------------------------*/
@@ -11515,8 +11515,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  800423c:	f85d 7b04 	ldr.w	r7, [sp], #4
  8004240:	4770      	bx	lr
  8004242:	bf00      	nop
- 8004244:	20012e60 	.word	0x20012e60
- 8004248:	20012e68 	.word	0x20012e68
+ 8004244:	2004b260 	.word	0x2004b260
+ 8004248:	2004b268 	.word	0x2004b268
 
 0800424c <std>:
  800424c:	2300      	movs	r3, #0
@@ -11560,7 +11560,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  80042a8:	080044af 	.word	0x080044af
  80042ac:	080044e7 	.word	0x080044e7
  80042b0:	0800450b 	.word	0x0800450b
- 80042b4:	20012e7c 	.word	0x20012e7c
+ 80042b4:	2004b27c 	.word	0x2004b27c
 
 080042b8 <stdio_exit_handler>:
  80042b8:	4a02      	ldr	r2, [pc, #8]	@ (80042c4 <stdio_exit_handler+0xc>)
@@ -11595,9 +11595,9 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  80042fc:	f000 bb9e 	b.w	8004a3c <_fflush_r>
  8004300:	bd10      	pop	{r4, pc}
  8004302:	bf00      	nop
- 8004304:	20012e7c 	.word	0x20012e7c
- 8004308:	20012ee4 	.word	0x20012ee4
- 800430c:	20012f4c 	.word	0x20012f4c
+ 8004304:	2004b27c 	.word	0x2004b27c
+ 8004308:	2004b2e4 	.word	0x2004b2e4
+ 800430c:	2004b34c 	.word	0x2004b34c
 
 08004310 <global_stdio_init.part.0>:
  8004310:	b510      	push	{r4, lr}
@@ -11618,21 +11618,21 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004336:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
  800433a:	2112      	movs	r1, #18
  800433c:	f7ff bf86 	b.w	800424c <std>
- 8004340:	20012fb4 	.word	0x20012fb4
- 8004344:	20012e7c 	.word	0x20012e7c
+ 8004340:	2004b3b4 	.word	0x2004b3b4
+ 8004344:	2004b27c 	.word	0x2004b27c
  8004348:	080042b9 	.word	0x080042b9
 
 0800434c <__sfp_lock_acquire>:
  800434c:	4801      	ldr	r0, [pc, #4]	@ (8004354 <__sfp_lock_acquire+0x8>)
  800434e:	f000 b9e8 	b.w	8004722 <__retarget_lock_acquire_recursive>
  8004352:	bf00      	nop
- 8004354:	20012fbd 	.word	0x20012fbd
+ 8004354:	2004b3bd 	.word	0x2004b3bd
 
 08004358 <__sfp_lock_release>:
  8004358:	4801      	ldr	r0, [pc, #4]	@ (8004360 <__sfp_lock_release+0x8>)
  800435a:	f000 b9e3 	b.w	8004724 <__retarget_lock_release_recursive>
  800435e:	bf00      	nop
- 8004360:	20012fbd 	.word	0x20012fbd
+ 8004360:	2004b3bd 	.word	0x2004b3bd
 
 08004364 <__sinit>:
  8004364:	b510      	push	{r4, lr}
@@ -11652,7 +11652,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004388:	e7f2      	b.n	8004370 <__sinit+0xc>
  800438a:	bf00      	nop
  800438c:	080042d1 	.word	0x080042d1
- 8004390:	20012fb4 	.word	0x20012fb4
+ 8004390:	2004b3b4 	.word	0x2004b3b4
 
 08004394 <_fwalk_sglue>:
  8004394:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -11984,7 +11984,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004662:	b103      	cbz	r3, 8004666 <_close_r+0x1a>
  8004664:	6023      	str	r3, [r4, #0]
  8004666:	bd38      	pop	{r3, r4, r5, pc}
- 8004668:	20012fb8 	.word	0x20012fb8
+ 8004668:	2004b3b8 	.word	0x2004b3b8
 
 0800466c <_lseek_r>:
  800466c:	b538      	push	{r3, r4, r5, lr}
@@ -12002,7 +12002,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004686:	b103      	cbz	r3, 800468a <_lseek_r+0x1e>
  8004688:	6023      	str	r3, [r4, #0]
  800468a:	bd38      	pop	{r3, r4, r5, pc}
- 800468c:	20012fb8 	.word	0x20012fb8
+ 800468c:	2004b3b8 	.word	0x2004b3b8
 
 08004690 <_read_r>:
  8004690:	b538      	push	{r3, r4, r5, lr}
@@ -12020,7 +12020,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  80046aa:	b103      	cbz	r3, 80046ae <_read_r+0x1e>
  80046ac:	6023      	str	r3, [r4, #0]
  80046ae:	bd38      	pop	{r3, r4, r5, pc}
- 80046b0:	20012fb8 	.word	0x20012fb8
+ 80046b0:	2004b3b8 	.word	0x2004b3b8
 
 080046b4 <_write_r>:
  80046b4:	b538      	push	{r3, r4, r5, lr}
@@ -12038,7 +12038,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  80046ce:	b103      	cbz	r3, 80046d2 <_write_r+0x1e>
  80046d0:	6023      	str	r3, [r4, #0]
  80046d2:	bd38      	pop	{r3, r4, r5, pc}
- 80046d4:	20012fb8 	.word	0x20012fb8
+ 80046d4:	2004b3b8 	.word	0x2004b3b8
 
 080046d8 <__libc_init_array>:
  80046d8:	b570      	push	{r4, r5, r6, lr}
@@ -12163,7 +12163,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  80047ce:	e7ca      	b.n	8004766 <_free_r+0x22>
  80047d0:	bd38      	pop	{r3, r4, r5, pc}
  80047d2:	bf00      	nop
- 80047d4:	20012fc4 	.word	0x20012fc4
+ 80047d4:	2004b3c4 	.word	0x2004b3c4
 
 080047d8 <sbrk_aligned>:
  80047d8:	b570      	push	{r4, r5, r6, lr}
@@ -12193,7 +12193,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004812:	d1f2      	bne.n	80047fa <sbrk_aligned+0x22>
  8004814:	e7ef      	b.n	80047f6 <sbrk_aligned+0x1e>
  8004816:	bf00      	nop
- 8004818:	20012fc0 	.word	0x20012fc0
+ 8004818:	2004b3c0 	.word	0x2004b3c0
 
 0800481c <_malloc_r>:
  800481c:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -12303,19 +12303,19 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004912:	6005      	str	r5, [r0, #0]
  8004914:	e7d6      	b.n	80048c4 <_malloc_r+0xa8>
  8004916:	bf00      	nop
- 8004918:	20012fc4 	.word	0x20012fc4
+ 8004918:	2004b3c4 	.word	0x2004b3c4
 
 0800491c <__malloc_lock>:
  800491c:	4801      	ldr	r0, [pc, #4]	@ (8004924 <__malloc_lock+0x8>)
  800491e:	f7ff bf00 	b.w	8004722 <__retarget_lock_acquire_recursive>
  8004922:	bf00      	nop
- 8004924:	20012fbc 	.word	0x20012fbc
+ 8004924:	2004b3bc 	.word	0x2004b3bc
 
 08004928 <__malloc_unlock>:
  8004928:	4801      	ldr	r0, [pc, #4]	@ (8004930 <__malloc_unlock+0x8>)
  800492a:	f7ff befb 	b.w	8004724 <__retarget_lock_release_recursive>
  800492e:	bf00      	nop
- 8004930:	20012fbc 	.word	0x20012fbc
+ 8004930:	2004b3bc 	.word	0x2004b3bc
 
 08004934 <__sflush_r>:
  8004934:	f9b1 200c 	ldrsh.w	r2, [r1, #12]
@@ -12572,7 +12572,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004b6a:	6023      	str	r3, [r4, #0]
  8004b6c:	bd38      	pop	{r3, r4, r5, pc}
  8004b6e:	bf00      	nop
- 8004b70:	20012fb8 	.word	0x20012fb8
+ 8004b70:	2004b3b8 	.word	0x2004b3b8
 
 08004b74 <_isatty_r>:
  8004b74:	b538      	push	{r3, r4, r5, lr}
@@ -12588,7 +12588,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004b8a:	b103      	cbz	r3, 8004b8e <_isatty_r+0x1a>
  8004b8c:	6023      	str	r3, [r4, #0]
  8004b8e:	bd38      	pop	{r3, r4, r5, pc}
- 8004b90:	20012fb8 	.word	0x20012fb8
+ 8004b90:	2004b3b8 	.word	0x2004b3b8
 
 08004b94 <_sbrk_r>:
  8004b94:	b538      	push	{r3, r4, r5, lr}
@@ -12604,7 +12604,7 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004baa:	b103      	cbz	r3, 8004bae <_sbrk_r+0x1a>
  8004bac:	6023      	str	r3, [r4, #0]
  8004bae:	bd38      	pop	{r3, r4, r5, pc}
- 8004bb0:	20012fb8 	.word	0x20012fb8
+ 8004bb0:	2004b3b8 	.word	0x2004b3b8
 
 08004bb4 <_sbrk>:
  8004bb4:	4a04      	ldr	r2, [pc, #16]	@ (8004bc8 <_sbrk+0x14>)
@@ -12617,8 +12617,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8004bc2:	4403      	add	r3, r0
  8004bc4:	6013      	str	r3, [r2, #0]
  8004bc6:	4770      	bx	lr
- 8004bc8:	20012fc8 	.word	0x20012fc8
- 8004bcc:	20012fd0 	.word	0x20012fd0
+ 8004bc8:	2004b3c8 	.word	0x2004b3c8
+ 8004bcc:	2004b3d0 	.word	0x2004b3d0
 
 08004bd0 <_init>:
  8004bd0:	b5f8      	push	{r3, r4, r5, r6, r7, lr}

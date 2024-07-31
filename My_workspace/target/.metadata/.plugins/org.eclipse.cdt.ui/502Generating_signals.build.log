@@ -1,10 +1,10 @@
-17:45:15 **** Incremental Build of configuration Debug for project 502Generating_signals ****
+19:42:11 **** Incremental Build of configuration Debug for project 502Generating_signals ****
 make -j8 all 
 arm-none-eabi-size  502Generating_signals.elf 
    text	   data	    bss	    dec	    hex	filename
-   5740	    376	   1672	   7788	   1e6c	502Generating_signals.elf
+   5532	   6192	   1664	  13388	   344c	502Generating_signals.elf
 Finished building: default.size.stdout
  
 
-17:45:16 Build Finished. 0 errors, 0 warnings. (took 600ms)
+19:42:11 Build Finished. 0 errors, 0 warnings. (took 376ms)
 
