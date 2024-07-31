@@ -1,0 +1,10 @@
+19:28:46 **** Incremental Build of configuration Debug for project 101Clock ****
+make -j8 all 
+arm-none-eabi-size  101Clock.elf 
+   text	   data	    bss	    dec	    hex	filename
+    768	      0	   1568	   2336	    920	101Clock.elf
+Finished building: default.size.stdout
+ 
+
+19:28:46 Build Finished. 0 errors, 0 warnings. (took 258ms)
+
