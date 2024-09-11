@@ -54,7 +54,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_SPI1_Init(void);
 /* USER CODE BEGIN PFP */
-
 void process_SD_card( void );
 /* USER CODE END PFP */
 
@@ -71,7 +70,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	printf("start\r\n");
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

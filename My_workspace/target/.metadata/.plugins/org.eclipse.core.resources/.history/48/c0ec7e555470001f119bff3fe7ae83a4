@@ -1,0 +1,13 @@
+/*
+ * fatfs_sd_card.h
+ *
+ *  Created on: Sep 11, 2024
+ *      Author: rolni
+ */
+
+#ifndef INC_FATFS_SD_CARD_H_
+#define INC_FATFS_SD_CARD_H_
+
+
+
+#endif /* INC_FATFS_SD_CARD_H_ */

@@ -1,10 +1,10 @@
-16:45:07 **** Incremental Build of configuration Debug for project 503SD_card ****
+15:32:46 **** Incremental Build of configuration Debug for project 503SD_card ****
 make -j8 all 
 arm-none-eabi-size  503SD_card.elf 
    text	   data	    bss	    dec	    hex	filename
-  32848	    128	   2576	  35552	   8ae0	503SD_card.elf
+  32868	    128	   2576	  35572	   8af4	503SD_card.elf
 Finished building: default.size.stdout
  
 
-16:45:08 Build Finished. 0 errors, 0 warnings. (took 384ms)
+15:32:46 Build Finished. 0 errors, 0 warnings. (took 373ms)
 

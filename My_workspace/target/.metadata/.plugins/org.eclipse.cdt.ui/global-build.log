@@ -1,57 +1,14 @@
-17:43:38 **** Incremental Build of configuration Debug for project 503SD_card ****
+18:21:13 **** Incremental Build of configuration Debug for project 505SD_card_SPI2 ****
 make -j8 all 
-arm-none-eabi-gcc "../FATFS/Target/user_diskio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F413xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"FATFS/Target/user_diskio.d" -MT"FATFS/Target/user_diskio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "FATFS/Target/user_diskio.o"
-arm-none-eabi-gcc "../Core/Src/fatfs_sd_card.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F413xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fatfs_sd_card.d" -MT"Core/Src/fatfs_sd_card.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fatfs_sd_card.o"
-arm-none-eabi-gcc -o "503SD_card.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\rolni\kody\STM32\My_workspace\target\503SD_card\STM32F413ZHTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="503SD_card.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 503SD_card.elf
- 
-arm-none-eabi-size  503SD_card.elf 
-arm-none-eabi-objdump -h -S 503SD_card.elf  > "503SD_card.list"
+arm-none-eabi-size  505SD_card_SPI2.elf 
    text	   data	    bss	    dec	    hex	filename
-  32768	    128	   2576	  35472	   8a90	503SD_card.elf
+  32928	    128	   2576	  35632	   8b30	505SD_card_SPI2.elf
 Finished building: default.size.stdout
  
-Finished building: 503SD_card.list
- 
-16:05:34 **** Build of configuration Debug for project 503SD_card ****
+18:21:24 **** Incremental Build of configuration Debug for project 505SD_card_SPI2 ****
 make -j8 all 
-arm-none-eabi-size  503SD_card.elf 
+arm-none-eabi-size  505SD_card_SPI2.elf 
    text	   data	    bss	    dec	    hex	filename
-  32768	    128	   2576	  35472	   8a90	503SD_card.elf
-Finished building: default.size.stdout
- 
-16:06:36 **** Incremental Build of configuration Debug for project 503SD_card ****
-make -j8 all 
-arm-none-eabi-size  503SD_card.elf 
-   text	   data	    bss	    dec	    hex	filename
-  32768	    128	   2576	  35472	   8a90	503SD_card.elf
-Finished building: default.size.stdout
- 
-16:44:10 **** Incremental Build of configuration Debug for project 503SD_card ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F413xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
-arm-none-eabi-gcc -o "503SD_card.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\rolni\kody\STM32\My_workspace\target\503SD_card\STM32F413ZHTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="503SD_card.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 503SD_card.elf
- 
-arm-none-eabi-size  503SD_card.elf 
-arm-none-eabi-objdump -h -S 503SD_card.elf  > "503SD_card.list"
-   text	   data	    bss	    dec	    hex	filename
-  32848	    128	   2576	  35552	   8ae0	503SD_card.elf
-Finished building: default.size.stdout
- 
-Finished building: 503SD_card.list
- 
-16:44:42 **** Incremental Build of configuration Debug for project 503SD_card ****
-make -j8 all 
-arm-none-eabi-size  503SD_card.elf 
-   text	   data	    bss	    dec	    hex	filename
-  32848	    128	   2576	  35552	   8ae0	503SD_card.elf
-Finished building: default.size.stdout
- 
-16:45:07 **** Incremental Build of configuration Debug for project 503SD_card ****
-make -j8 all 
-arm-none-eabi-size  503SD_card.elf 
-   text	   data	    bss	    dec	    hex	filename
-  32848	    128	   2576	  35552	   8ae0	503SD_card.elf
+  32928	    128	   2576	  35632	   8b30	505SD_card_SPI2.elf
 Finished building: default.size.stdout
  

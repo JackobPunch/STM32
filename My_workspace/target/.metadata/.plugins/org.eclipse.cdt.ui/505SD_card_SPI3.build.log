@@ -1,0 +1,10 @@
+18:19:26 **** Incremental Build of configuration Debug for project 505SD_card_SPI3 ****
+make -j8 all 
+arm-none-eabi-size  505SD_card_SPI3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32928	    128	   2576	  35632	   8b30	505SD_card_SPI3.elf
+Finished building: default.size.stdout
+ 
+
+18:19:28 Build Finished. 0 errors, 0 warnings. (took 1s.252ms)
+
