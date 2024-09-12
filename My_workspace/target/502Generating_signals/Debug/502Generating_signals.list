@@ -243,7 +243,7 @@ static void MX_TIM6_Init(void) {
  8000318:	4b0c      	ldr	r3, [pc, #48]	@ (800034c <MX_TIM6_Init+0x50>)
  800031a:	2200      	movs	r2, #0
  800031c:	609a      	str	r2, [r3, #8]
-    htim6.Init.Period = 99;//599; // 10 kHz / 600 = 16.67 Hz update rate
+    htim6.Init.Period = 99; //599; // 10 kHz / 600 = 16.67 Hz update rate
  800031e:	4b0b      	ldr	r3, [pc, #44]	@ (800034c <MX_TIM6_Init+0x50>)
  8000320:	2263      	movs	r2, #99	@ 0x63
  8000322:	60da      	str	r2, [r3, #12]
