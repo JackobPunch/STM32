@@ -17,14 +17,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
     if (htim->Instance == TIM6) {
         // Update DAC channels
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, values1[index]);
+    	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, values1[index]);
         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, values1[index]);
         index++;
     }
 }
 
 int main(void) {
-    HAL_Init();
+	HAL_Init();
     SystemClock_Config();
     MX_GPIO_Init();
     MX_DAC_Init();
@@ -34,7 +34,6 @@ int main(void) {
     HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
 
     HAL_TIM_Base_Start_IT(&htim6);
-
     while (1) {
         // Main loop does nothing, DAC updates are handled in the timer interrupt
     }

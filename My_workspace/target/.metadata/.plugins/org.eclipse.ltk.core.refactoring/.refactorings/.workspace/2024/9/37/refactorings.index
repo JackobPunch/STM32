@@ -8,3 +8,5 @@
 1726071618289	Rename resource '505SD_card_SPI3'
 1726076451272	Delete resource '505SD_card_SPI2/505SD_card_SPI3 (1).launch'
 1726076456879	Delete resource '505SD_card_SPI2/505SD_card_SPI3.launch'
+1726138972847	Delete resource '502Generating_signals/Core/Src/syscalls.c'
+1726149774688	Delete resource '506Generating_signals2'
