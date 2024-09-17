@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;505SD_card_SPI2/Core/Src/stm32f4xx_hal_timebase_tim.c&apos;" deleteContents="false" description="Delete resource &apos;505SD_card_SPI2/Core/Src/stm32f4xx_hal_timebase_tim.c&apos;" element1="/505SD_card_SPI2/Core/Src/stm32f4xx_hal_timebase_tim.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1726592314836"/>
+</session>

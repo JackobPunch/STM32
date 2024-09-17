@@ -64,17 +64,23 @@ static void MX_DAC_Init(void);
 static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 void process_SD_card(void);
+
+/*void TIM6_DAC_IRQHandler(void)
+{
+    HAL_TIM_IRQHandler(&htim6);
+}
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     static int index = 0;
 
     if (htim->Instance == TIM6) {
         // Update DAC channels
-    	printf("%d", values1[index]);
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, values1[index]);
+    	//printf("%d", values1[index]);
+    	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, values1[index]);
         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, values1[index]);
         index++;
     }
-}
+}*/
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/

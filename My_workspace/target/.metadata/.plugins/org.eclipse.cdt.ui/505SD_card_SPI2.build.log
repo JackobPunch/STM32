@@ -1,17 +1,10 @@
-18:32:24 **** Incremental Build of configuration Debug for project 505SD_card_SPI2 ****
+18:58:53 **** Incremental Build of configuration Debug for project 505SD_card_SPI2 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F413xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "505SD_card_SPI2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\rolni\kody\STM32\My_workspace\target\505SD_card_SPI3\STM32F413ZHTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="505SD_card_SPI2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 505SD_card_SPI2.elf
- 
 arm-none-eabi-size  505SD_card_SPI2.elf 
-arm-none-eabi-objdump -h -S 505SD_card_SPI2.elf  > "505SD_card_SPI2.list"
    text	   data	    bss	    dec	    hex	filename
-  34780	    128	   2664	  37572	   92c4	505SD_card_SPI2.elf
+  34776	    128	   2664	  37568	   92c0	505SD_card_SPI2.elf
 Finished building: default.size.stdout
  
-Finished building: 505SD_card_SPI2.list
- 
 
-18:32:25 Build Finished. 0 errors, 0 warnings. (took 1s.423ms)
+18:58:53 Build Finished. 0 errors, 0 warnings. (took 308ms)
 
