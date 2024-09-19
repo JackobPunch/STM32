@@ -2,6 +2,13 @@ ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o: \
  ../ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.c \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/FreeRTOS.h \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/FreeRTOSConfig.h \
+ C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h \
+ C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW.h \
+ C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/SEGGER/SEGGER.h \
+ C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/Config/Global.h \
+ C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h \
+ C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/Config/SEGGER_SYSVIEW_Conf.h \
+ C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/Config/SEGGER_RTT_Conf.h \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/projdefs.h \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/portable.h \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/deprecated_definitions.h \
@@ -11,6 +18,13 @@ ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F/port.o: \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/list.h
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/FreeRTOS.h:
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/FreeRTOSConfig.h:
+C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h:
+C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW.h:
+C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/SEGGER/SEGGER.h:
+C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/Config/Global.h:
+C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW_ConfDefaults.h:
+C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/Config/SEGGER_SYSVIEW_Conf.h:
+C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/Config/SEGGER_RTT_Conf.h:
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/projdefs.h:
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/portable.h:
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/deprecated_definitions.h:

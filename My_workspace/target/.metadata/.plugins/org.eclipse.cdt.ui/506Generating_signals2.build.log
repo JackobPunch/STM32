@@ -1,4 +1,4 @@
-18:45:20 **** Incremental Build of configuration Debug for project 506Generating_signals2 ****
+21:52:03 **** Incremental Build of configuration Debug for project 506Generating_signals2 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F413xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "506Generating_signals2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\rolni\kody\STM32\My_workspace\target\506Generating_signals2\STM32F413ZHTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="506Generating_signals2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -13,5 +13,5 @@ Finished building: default.size.stdout
 Finished building: 506Generating_signals2.list
  
 
-18:45:22 Build Finished. 0 errors, 0 warnings. (took 2s.602ms)
+21:52:05 Build Finished. 0 errors, 0 warnings. (took 2s.150ms)
 
