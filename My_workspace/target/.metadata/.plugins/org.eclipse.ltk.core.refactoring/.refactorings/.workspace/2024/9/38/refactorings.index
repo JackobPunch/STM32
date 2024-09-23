@@ -1,1 +1,5 @@
 1726592314836	Delete resource '505SD_card_SPI2/Core/Src/stm32f4xx_hal_timebase_tim.c'
+1726763221459	Delete resource '401FreeRTOS_first/ThirdParty/SEGGER/Rec'
+1726838587790	Delete resource '402LED/common/ThirdParty/FreeRTOS/include/FreeRTOS.h'
+1726838698378	Delete resource '402LED/Core/Inc/FreeRTOS.h'
+1726838729987	Delete resource '402LED/common/ThirdParty/FreeRTOS/FreeRTOSConfig.h'

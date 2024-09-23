@@ -55,7 +55,7 @@ static void MX_GPIO_Init(void);
 static void task1_handler(void* parameters);
 static void task2_handler(void* parameters);
 
-extern void SEGGER_UART_init(U32 baud);
+//extern void SEGGER_UART_init(U32 baud);
 
 /* USER CODE END PFP */
 
@@ -102,11 +102,11 @@ int main(void)
   //Enable the CYCCNT counter
   DWT_CTRL |= (1<<0);
 
-  SEGGER_UART_init(500000);
+  //SEGGER_UART_init(500000);
 
   SEGGER_SYSVIEW_Conf();
 
-  //SEGGER_SYSVIEW_Start();
+  SEGGER_SYSVIEW_Start();
 
   status = xTaskCreate(task1_handler, "Task-1", 200, "Hello world from Task-1", 2, &task1_handle);
 
@@ -271,8 +271,8 @@ static void task2_handler(void* parameters){
 			snprintf(msg,100,(char*)parameters);
 			SEGGER_SYSVIEW_PrintfTarget(msg);
 			taskYIELD();
-		}
 	}
+}
 
 /* USER CODE END 4 */
 
