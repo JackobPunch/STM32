@@ -26,6 +26,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/FreeRTOS.h \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/FreeRTOSConfig.h \
  C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h \
@@ -70,6 +71,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/include/FreeRTOS.h:
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/FreeRTOS/FreeRTOSConfig.h:
 C:/Users/rolni/kody/STM32/My_workspace/target/401FreeRTOS_first/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h:

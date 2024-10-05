@@ -246,7 +246,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 static void led_green_handler(void* parameters){
 	while(1){
-		//SEGGER_SYSVIEW_PrintfTarget("Toggling green LED");
+		SEGGER_SYSVIEW_PrintfTarget("Toggling green LED");
 		HAL_GPIO_TogglePin(GPIOB,LD1_Pin);
 		HAL_Delay(1000);
 		//taskYIELD();
@@ -255,7 +255,7 @@ static void led_green_handler(void* parameters){
 
 static void led_blue_handler(void* parameters){
 	while(1){
-		//SEGGER_SYSVIEW_PrintfTarget("Toggling blue LED");
+		SEGGER_SYSVIEW_PrintfTarget("Toggling blue LED");
 		HAL_GPIO_TogglePin(GPIOB,LD2_Pin);
 		HAL_Delay(800);
 		//taskYIELD();
@@ -264,12 +264,13 @@ static void led_blue_handler(void* parameters){
 
 static void led_red_handler(void* parameters){
 	while(1){
-		//SEGGER_SYSVIEW_PrintfTarget("Toggling red LED");
+		SEGGER_SYSVIEW_PrintfTarget("Toggling red LED");
 		HAL_GPIO_TogglePin(GPIOB,LD3_Pin);
 		HAL_Delay(400);
 		//taskYIELD();
 	}
 }
+
 /* USER CODE END 4 */
 
 /**

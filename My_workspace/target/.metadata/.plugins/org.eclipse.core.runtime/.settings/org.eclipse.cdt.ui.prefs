@@ -1,4 +1,6 @@
+content_assist_order_proposals=true
 eclipse.preferences.version=1
+sourceHoverBackgroundColor=47,47,47
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

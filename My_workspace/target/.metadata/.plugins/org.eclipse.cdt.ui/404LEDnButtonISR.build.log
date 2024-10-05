@@ -1,0 +1,10 @@
+14:46:07 **** Incremental Build of configuration Debug for project 404LEDnButtonISR ****
+make -j8 all 
+arm-none-eabi-size  404LEDnButtonISR.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29280	     20	 315036	 344336	  54110	404LEDnButtonISR.elf
+Finished building: default.size.stdout
+ 
+
+14:46:08 Build Finished. 0 errors, 0 warnings. (took 834ms)
+
