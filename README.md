@@ -34,7 +34,6 @@ This is a practical, learning-focused repository. Organization may vary across f
 
 ## ⚠️ Notes
 
-- Some code snippets are adapted from course material originally meant for the STM32F407VG Discovery board.
 - This repo is a sandbox for learning and exploration — folder names and file structures may reflect experimentation rather than final designs.
 
 ---
