@@ -1,6 +1,6 @@
 # STM32 Learning Repository
 
-This repository contains code and notes from my journey learning STM32 microcontroller programming. It combines materials from several Udemy courses and hands-on experimentation using the **STM32 Nucleo-144** board, even though some courses were originally designed for the **STM32F4 Discovery** board.
+This repository contains code and notes from my journey learning STM32 microcontroller programming. It combines materials from several Udemy courses and hands-on experimentation using the **STM32 Nucleo-144** board, even though courses were originally designed for the **STM32F4 Discovery** board.
 
 ## 📚 Courses Referenced
 
