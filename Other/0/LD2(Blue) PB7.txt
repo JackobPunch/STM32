@@ -1,0 +1,43 @@
+LD2(Blue) PB7
+
+Address of the clock control register (RCC_AHB1ENR)
+0x4002 3800 + 0x30 = 0x4002 3830
+
+bit 1 (1)= 1 = 0x0000 0002
+
+Address of the GPIOB mode register
+0x4002 0400 + 0x00 = 0x4002 0400
+
+bit 15 and 14 (01) = 16384 = 0x0000 4000
+
+Addres of the GPIOB output data register
+0x4002 0400 + 0x14 = 0x4002 0414
+
+bit 7 (1) = 128 = 0x0000 0080;
+---------------------------------------------
+PB0
+
+Address of the clock control register (RCC_AHB1ENR)
+0x4002 3800 + 0x30 = 0x4002 3830
+
+bit 1 and 0 (11)= 3 = 0x0000 0003
+
+Address of the GPIOA mode register
+0x4002 0000 + 0x00 = 0x4002 0000
+
+bit 1 and 0 (00) = 0 = 0x00
+
+Addres of the GPIOB input data register
+0x4002 0400 + 0x10 = 0x4002 0010
+
+Address of the GPIOB mode register
+0x4002 0400 + 0x00 = 0x4002 0400
+
+bit 15 and 14 (01) = 16384 = 0x0000 4000
+
+Addres of the GPIOB output data register
+0x4002 0400 + 0x14 = 0x4002 0414
+
+bit 7 (1) = 128 = 0x0000 0080;
+
+

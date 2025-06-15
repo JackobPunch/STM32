@@ -1,0 +1,12 @@
+clock control register (RCC_AHB1ENR) 0x4002 3830
+4 i 5
+GPIOE 0x4002 1000
+GPIOF 0x4002 1400
+mode port for both +0x00
+00 input 
+01 output
+-----------
+Input +0x10
+Output +0x14
+Pull Up/Down +0x0C
+01 pull up 
