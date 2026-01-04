@@ -1,4 +1,4 @@
-19:10:04 **** Build of configuration Debug for project CAN_LoopBack_CM7 ****
+19:23:06 **** Build of configuration Debug for project CAN_LoopBack_CM7 ****
 make -j8 all 
 arm-none-eabi-gcc "C:/Users/rolni/kody/STM32/My_workspace/target2/CAN_LoopBack/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DCORE_CM7 -DUSE_HAL_DRIVER -DSTM32H755xx -DUSE_PWR_DIRECT_SMPS_SUPPLY -c -I../Core/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.d" -MT"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o"
 arm-none-eabi-gcc "C:/Users/rolni/kody/STM32/My_workspace/target2/CAN_LoopBack/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DCORE_CM7 -DUSE_HAL_DRIVER -DSTM32H755xx -DUSE_PWR_DIRECT_SMPS_SUPPLY -c -I../Core/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.d" -MT"Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.o"
@@ -37,8 +37,15 @@ Finished building target: CAN_LoopBack_CM7.elf
 arm-none-eabi-size  CAN_LoopBack_CM7.elf 
 arm-none-eabi-objdump -h -S CAN_LoopBack_CM7.elf  > "CAN_LoopBack_CM7.list"
    text	   data	    bss	    dec	    hex	filename
-  23524	     16	   1880	  25420	   634c	CAN_LoopBack_CM7.elf
+  27212	     96	   2208	  29516	   734c	CAN_LoopBack_CM7.elf
 Finished building: default.size.stdout
  
 Finished building: CAN_LoopBack_CM7.list
+ 
+19:23:15 **** Incremental Build of configuration Debug for project CAN_LoopBack_CM7 ****
+make -j8 all 
+arm-none-eabi-size  CAN_LoopBack_CM7.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27212	     96	   2208	  29516	   734c	CAN_LoopBack_CM7.elf
+Finished building: default.size.stdout
  

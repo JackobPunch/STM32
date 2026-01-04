@@ -93,7 +93,8 @@ int main(void)
   MX_CAN1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_CAN_Start(&hcan1); // Start CAN peripheral
+  CAN1_Tx();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -265,6 +266,33 @@ static void MX_USART2_UART_Init(void)
   /* USER CODE BEGIN USART2_Init 2 */
 
   /* USER CODE END USART2_Init 2 */
+}
+
+void CAN1_TX(void)
+{
+  char msg[50];
+
+  CAN_TxHeaderTypeDef TxHeader;
+
+  uint32_t TxMailbox;
+
+  uint8_t TxData[5] = {'H', 'E', 'L', 'L', 'O'};
+
+  TxHeader.DLC = 5;
+  TxHeader.StdId = 0x65;
+  TxHeader.IDE = CAN_ID_STD;
+  TxHeader.RTR = CAN_RTR_DATA;
+
+  if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  while (HAL_CAN_IsTxMessagePending(&hcan1, TxMailbox))
+    ;
+
+  sprintf(msg, "Message Transmitted\r\n");
+  HAL_UART_Transmit(&huart2, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
 }
 
 /**

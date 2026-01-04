@@ -21,7 +21,11 @@
 #include "fdcan.h"
 
 /* USER CODE BEGIN 0 */
+#include <stdio.h>  // For sprintf
+#include <string.h> // For strlen
+#include "usart.h"  // For UART functions
 
+extern UART_HandleTypeDef huart3; // UART3 handle for debug output
 /* USER CODE END 0 */
 
 FDCAN_HandleTypeDef hfdcan1;
@@ -57,9 +61,9 @@ void MX_FDCAN1_Init(void)
                                                   // Could be FDCAN_FRAME_FD_BRS for CAN-FD
                                                   // or FDCAN_FRAME_FD_NO_BRS for CAN-FD without bit rate switching
 
-  hfdcan1.Init.Mode = FDCAN_MODE_INTERNAL_LOOPBACK; // Internal loopback for testing
-                                                    // TX messages are internally routed to RX
-                                                    // Perfect for learning without external CAN bus
+  hfdcan1.Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK; // External loopback for testing
+                                                    // TX messages go to physical pins AND looped back internally
+                                                    // Logic analyzer will see activity on PD1 (TX pin)
 
   hfdcan1.Init.AutoRetransmission = ENABLE; // ✅ Automatically retry failed transmissions
                                             // Essential for reliable CAN communication
@@ -169,6 +173,34 @@ void MX_FDCAN1_Init(void)
   // These functions exist in stm32h7xx_hal_fdcan.c - you don't need to implement them!
   // You just need to CALL them with proper parameters in your main application code.
   /* USER CODE END FDCAN1_Init 2 */
+}
+
+void FDCAN1_TX(void)
+{
+  FDCAN_TxHeaderTypeDef TxHeader;
+  uint8_t TxData[6] = "Hello"; // Your message data
+  char msg[50];                // Buffer for debug message
+
+  // Configure TX header
+  TxHeader.Identifier = 0x65D;         // Same ID as course
+  TxHeader.IdType = FDCAN_STANDARD_ID; // 11-bit ID
+  TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+  TxHeader.DataLength = FDCAN_DLC_BYTES_6; // 5 bytes like course
+  TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+  TxHeader.BitRateSwitch = FDCAN_BRS_OFF; // Classic CAN
+  TxHeader.FDFormat = FDCAN_CLASSIC_CAN;  // Classic CAN
+  TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+  TxHeader.MessageMarker = 0;
+
+  // Send message
+  if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  // Debug output to UART (like the course)
+  sprintf(msg, "Message Transmitted: %s\r\n", TxData);
+  HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
 }
 
 /**
