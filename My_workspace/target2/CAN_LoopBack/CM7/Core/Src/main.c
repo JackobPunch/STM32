@@ -144,8 +144,12 @@ int main(void)
   MX_FDCAN1_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_FDCAN_Start(&hfdcan1); // Start FDCAN peripheral
-  FDCAN1_TX();
+  FDCAN_Filter_Config(); // Configure FDCAN filters (like course CAN_Filter_Config)
+
+  if (HAL_FDCAN_Start(&hfdcan1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -157,6 +161,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
     FDCAN1_TX();     // Send CAN message
     HAL_Delay(1000); // Wait 1 second between messages
+
+    FDCAN1_RX(); // Receive CAN message (like course)
     /* USER CODE END 3 */
   }
 }

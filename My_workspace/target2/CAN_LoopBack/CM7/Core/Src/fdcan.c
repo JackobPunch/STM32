@@ -117,11 +117,10 @@ void MX_FDCAN1_Init(void)
                                      // FDCAN has configurable memory layout
 
   // FILTER CONFIGURATION - Controls which messages are accepted
-  hfdcan1.Init.StdFiltersNbr = 0; // Number of Standard ID filters (11-bit IDs)
-                                  // 0 = Accept ALL standard ID messages
+  hfdcan1.Init.StdFiltersNbr = 1; // Number of Standard ID filters (11-bit IDs)
+                                  // 1 = Use one filter (configured in FDCAN_Filter_Config)
   hfdcan1.Init.ExtFiltersNbr = 0; // Number of Extended ID filters (29-bit IDs)
-                                  // 0 = Accept ALL extended ID messages
-                                  // Perfect for learning - no message filtering
+                                  // 0 = No extended ID filtering
 
   // RECEIVE BUFFER CONFIGURATION - Where incoming messages are stored
   hfdcan1.Init.RxFifo0ElmtsNbr = 2;                  // RX FIFO 0: 2 message elements
@@ -173,34 +172,6 @@ void MX_FDCAN1_Init(void)
   // These functions exist in stm32h7xx_hal_fdcan.c - you don't need to implement them!
   // You just need to CALL them with proper parameters in your main application code.
   /* USER CODE END FDCAN1_Init 2 */
-}
-
-void FDCAN1_TX(void)
-{
-  FDCAN_TxHeaderTypeDef TxHeader;
-  uint8_t TxData[6] = "Hello"; // Your message data
-  char msg[50];                // Buffer for debug message
-
-  // Configure TX header
-  TxHeader.Identifier = 0x65D;         // Same ID as course
-  TxHeader.IdType = FDCAN_STANDARD_ID; // 11-bit ID
-  TxHeader.TxFrameType = FDCAN_DATA_FRAME;
-  TxHeader.DataLength = FDCAN_DLC_BYTES_6; // 5 bytes like course
-  TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
-  TxHeader.BitRateSwitch = FDCAN_BRS_OFF; // Classic CAN
-  TxHeader.FDFormat = FDCAN_CLASSIC_CAN;  // Classic CAN
-  TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
-  TxHeader.MessageMarker = 0;
-
-  // Send message
-  if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  // Debug output to UART (like the course)
-  sprintf(msg, "Message Transmitted: %s\r\n", TxData);
-  HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
 }
 
 /**
@@ -295,5 +266,76 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef *fdcanHandle)
 }
 
 /* USER CODE BEGIN 1 */
+void FDCAN1_TX(void)
+{
+  FDCAN_TxHeaderTypeDef TxHeader;
+  uint8_t TxData[6] = "Hello"; // Your message data
+  char msg[50];                // Buffer for debug message
+
+  // Configure TX header
+  TxHeader.Identifier = 0x65D;         // Same ID as course
+  TxHeader.IdType = FDCAN_STANDARD_ID; // 11-bit ID
+  TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+  TxHeader.DataLength = FDCAN_DLC_BYTES_6; // 5 bytes like course
+  TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+  TxHeader.BitRateSwitch = FDCAN_BRS_OFF; // Classic CAN
+  TxHeader.FDFormat = FDCAN_CLASSIC_CAN;  // Classic CAN
+  TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+  TxHeader.MessageMarker = 0;
+
+  // Send message
+  if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  // Debug output to UART (like the course)
+  sprintf(msg, "Message Transmitted: %s\r\n", TxData);
+  HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+}
+
+void FDCAN1_RX(void)
+{
+  char msg[50];
+  FDCAN_RxHeaderTypeDef RxHeader;
+  uint8_t RxData[6]; // Match TX data size (6 bytes for "Hello" + null)
+
+  // Wait for message to be received in RX FIFO 0
+  while (!HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0))
+  {
+    // Wait for message to be received
+    // In loopback mode, this will receive our own transmitted messages
+  };
+
+  // Get the received message from RX FIFO 0
+  if (HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  // Debug output to UART (like the course)
+  sprintf(msg, "Message Received: %s\r\n", RxData);
+  HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+}
+
+void FDCAN_Filter_Config(void)
+{
+  FDCAN_FilterTypeDef fdcanfilterconfig;
+
+  // FDCAN Filter Configuration - Accept ALL messages (like course filter setup)
+  fdcanfilterconfig.IdType = FDCAN_STANDARD_ID;             // Standard 11-bit IDs
+  fdcanfilterconfig.FilterIndex = 0;                        // Use filter index 0
+  fdcanfilterconfig.FilterType = FDCAN_FILTER_RANGE;        // Range filter type
+  fdcanfilterconfig.FilterConfig = FDCAN_FILTER_TO_RXFIFO0; // Route to RX FIFO 0
+  fdcanfilterconfig.FilterID1 = 0x000;                      // Start of range: 0x000
+  fdcanfilterconfig.FilterID2 = 0x7FF;                      // End of range: 0x7FF (all 11-bit IDs)
+  // This creates a filter that accepts ALL standard CAN IDs (0x000 to 0x7FF)
+
+  // Configure the FDCAN filter
+  if (HAL_FDCAN_ConfigFilter(&hfdcan1, &fdcanfilterconfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
 
 /* USER CODE END 1 */

@@ -42,7 +42,9 @@ extern "C"
   void MX_FDCAN1_Init(void);
 
   /* USER CODE BEGIN Prototypes */
-  void FDCAN1_TX(void); // Function to transmit CAN message
+  void FDCAN1_TX(void);           // Function to transmit CAN message
+  void FDCAN1_RX(void);           // Function to receive CAN message
+  void FDCAN_Filter_Config(void); // Function to configure CAN message filters
   /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

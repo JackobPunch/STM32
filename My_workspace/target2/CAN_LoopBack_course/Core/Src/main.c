@@ -52,8 +52,11 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_CAN1_Init(void);
 static void MX_USART2_UART_Init(void);
-/* USER CODE BEGIN PFP */
 
+/* USER CODE BEGIN PFP */
+void CAN1_TX(void);
+void CAN1_Rx(void);
+void CAN_Filter_Config(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -93,8 +96,12 @@ int main(void)
   MX_CAN1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_CAN_Start(&hcan1); // Start CAN peripheral
-  CAN1_Tx();
+  CAN_Filter_Config(); // Configure CAN filters
+
+  if (HAL_CAN_Start(&hcan1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -104,6 +111,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    CAN1_Tx();
+    HAL_Delay(1000); // Wait 1 second between messages
+
+    CAN1_Rx();
   }
   /* USER CODE END 3 */
 }
@@ -293,6 +304,49 @@ void CAN1_TX(void)
 
   sprintf(msg, "Message Transmitted\r\n");
   HAL_UART_Transmit(&huart2, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+}
+
+void CAN1_Rx(void)
+{
+  char msg[50];
+
+  CAN_RxHeaderTypeDef RxHeader;
+
+  uint8_t RxData[5];
+
+  while (!HAL_CAN_GetRxFifoFillLevel(&hcan1, CAN_RX_FIFO0))
+  {
+    // Wait for message to be received
+  };
+
+  if (HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  sprintf(msg, "Message Received: %s\r\n", RxData);
+  HAL_UART_Transmit(&huart2, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+}
+
+void CAN_Filter_Config(void)
+{
+  CAN_FilterTypeDef canfilterconfig;
+
+  canfilterconfig.FilterActivation = ENABLE;
+  canfilterconfig.FilterBank = 0;
+  canfilterconfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
+  canfilterconfig.FilterIdHigh = 0x0000;
+  canfilterconfig.FilterIdLow = 0x0000;
+  canfilterconfig.FilterMaskIdHigh = 0x0000;
+  canfilterconfig.FilterMaskIdLow = 0x0000;
+  canfilterconfig.FilterMode = CAN_FILTERMODE_IDMASK;
+  canfilterconfig.FilterScale = CAN_FILTERSCALE_32BIT;
+  canfilterconfig.SlaveStartFilterBank = 14;
+
+  if (HAL_CAN_ConfigFilter(&hcan1, &canfilterconfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
 }
 
 /**
