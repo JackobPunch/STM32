@@ -1,0 +1,15 @@
+# STM32CubeIDE build artifacts
+Debug/
+Release/
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.hex
+*.map
+*.list
+*.a
+
+# IDE workspace metadata
+.metadata/
